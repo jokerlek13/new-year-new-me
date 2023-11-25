@@ -1,6 +1,5 @@
 import os
 
-
 def cwd():
     path = os.getcwd()
     print(f'The current working directory is: \n\t {path}')

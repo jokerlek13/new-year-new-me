@@ -17,15 +17,15 @@ class Robot:
         return f"{self.name} (Age: {self.age}, Energy: {self.energy})"
 
     def grow(self):
-        self.age += 1
+
 
 
     def eat(self, amount):
-        self.energy = min(self.energy + amount, Robot.MAX_ENERGY)
+
 
 
     def move(self, distance):
-        self.energy = max(self.energy - distance, 0)
+
 
 if __name__ == "__main__":
     robot = Robot()

@@ -1,19 +1,32 @@
 class Human:
-    # Class attribute
     MAX_ENERGY = 100
 
-    # Initializer
-    def __init__(self, name="Human", age=0, energy=None):
-        self.name = name
-        self.age = age
-        self.energy = Human.MAX_ENERGY if energy is None else energy
+    def __init__(self):
+        self.name = "Human"
+        self.age = 0
+        self.energy = Human.MAX_ENERGY
 
-    # Instance method
     def display(self):
         print(f"I am {self.name}")
 
-# Testing the Human class
+    def __repr__(self):
+        return f"Human(name={self.name}, age={self.age}, energy={self.energy})"
+
+    def __str__(self):
+        return f"{self.name} (Age: {self.age}, Energy: {self.energy})"
+
+    def grow(self):
+        self.age += 1
+
+    def eat(self, amount):
+        self.energy = min(self.energy + amount, Human.MAX_ENERGY)
+
+    def move(self, distance):
+        self.energy = max(self.energy - distance, 0)
+
 if __name__ == "__main__":
     human = Human()
-    human.display()
-In this class:
+    human.grow()
+    human.eat(10)
+    human.move(5)
+    print(str(human))

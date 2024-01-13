@@ -1,4 +1,4 @@
-import os
+'''import os
 
 def cwd():
     path = os.getcwd()
@@ -9,3 +9,7 @@ def cwd():
 def run():
     print('Processing...')
 cwd()
+'''
+with open("data.txt") as file:
+  data = file.read(10)
+  lines = data.split('\n')

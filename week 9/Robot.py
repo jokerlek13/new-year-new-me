@@ -1,29 +1,35 @@
 class Robot:
-    # Class attribute
     laws = "Protect, Obey and Survive"
     MAX_ENERGY = 100
 
-    # Static method
-    @staticmethod
-    def the_laws():
-        print(Robot.laws)
-
-    # Class method
-    @classmethod
-    def assemble(cls):
-        return cls("Assembled Robot")
-
-    # Initializer
-    def __init__(self, name="Robot", energy=0):
+    def __init__(self, name="Robot"):
         self.name = name
         self.age = 0
-        self.energy = energy
+        self.energy = 0
 
-    # Instance method
     def display(self):
         print(f"I am {self.name}")
 
-# Testing the Robot class
+    def __repr__(self):
+        return f"Robot(name={self.name}, age={self.age}, energy={self.energy})"
+
+    def __str__(self):
+        return f"{self.name} (Age: {self.age}, Energy: {self.energy})"
+
+    def grow(self):
+        self.age += 1
+
+
+    def eat(self, amount):
+        self.energy = min(self.energy + amount, Robot.MAX_ENERGY)
+
+
+    def move(self, distance):
+        self.energy = max(self.energy - distance, 0)
+
 if __name__ == "__main__":
     robot = Robot()
-    robot.display()
+    robot.grow()
+    robot.eat(10)
+    robot.move(5)
+    print(str(robot))

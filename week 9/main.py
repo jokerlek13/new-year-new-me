@@ -1,8 +1,6 @@
 from Human import Human
 from Robot import Robot
 from Planet import Planet
-from Inhabitants import Inhabitant
-
 
 if __name__ == '__main__':
     print(Human.MAX_ENERGY)

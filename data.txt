@@ -1,0 +1,7 @@
+
+The above code will open the file data.txt relative to the current working directory and assign a reference to the opened file to the variable file.
+It is important to close a file once we are done processing it so as to free it for use by other processes.  We can do this simply by using the method close:
+
+file.close()
+
+We can also use the keyword with in order to automatically close a file once we are done processing it:

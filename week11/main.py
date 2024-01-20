@@ -2,6 +2,7 @@ import csv
 import tui
 import process
 
+
 def read_data(file_path):
     tui.started(f"Reading data from {file_path}")
     data = []
@@ -36,6 +37,6 @@ def run():
         else:
             tui.error("Invalid Selection!")
 
+
 if __name__ == "__main__":
     run()
-
